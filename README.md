@@ -1,10 +1,18 @@
 Github Express Hook
 ===================
 
-Create a github web hook for express applications.
+Create a github web hook to update an express
+applications automatically.
 
-Usage
------
+How it works
+------------
+
+It will listen to port 8001 for http requests,
+and then perform `git pull`, `npm install && npm update`,
+and `node app.js` to restart the server.
+
+How to use
+----------
 
     node hook.js path...
 
