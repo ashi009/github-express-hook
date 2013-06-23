@@ -38,7 +38,7 @@ http.createServer(function(req, res) {
         cwd: path
       }, callback);
     },
-    restartNode
+    // restartNode();
   ], function(err, results) {
     // console.log(err, results);
     res.end();
