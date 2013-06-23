@@ -4,22 +4,22 @@ var async = require('async');
 var spawn = child_process.spawn;
 
 var path = process.argv[2];
-var node;
+// var node;
 
-function restartNode(callback) {
-  if (node) {
-    node.kill();
-    node = null;
-  }
-  node = spawn('node', ['app.js'], {
-    cwd: path,
-    stdio: 'ignore'
-  });
-  if (callback)
-    callback();
-}
+// function restartNode(callback) {
+//   if (node) {
+//     node.kill();
+//     node = null;
+//   }
+//   node = spawn('node', ['app.js'], {
+//     cwd: path,
+//     stdio: 'ignore'
+//   });
+//   if (callback)
+//     callback();
+// }
 
-restartNode();
+// restartNode();
 
 http.createServer(function(req, res) {
   async.series([
@@ -40,7 +40,7 @@ http.createServer(function(req, res) {
     },
     restartNode
   ], function(err, results) {
-    console.log(err, results);
+    // console.log(err, results);
     res.end();
   });
 }).listen(8001);
