@@ -40,7 +40,7 @@ http.createServer(function(req, res) {
     },
     // restartNode();
   ], function(err, results) {
-    // console.log(err, results);
+    console.log(err, results);
     res.end();
   });
 }).listen(8001);
